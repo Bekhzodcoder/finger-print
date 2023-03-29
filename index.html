@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap link -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="icon" href="./svg/favicon.ico">
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/index.css">
+    <title>FingerPrint BuxDU</title>
+</head>
+<body>
+    <section class="banner">
+        <div class="navbar">
+            <div class="container">
+                <div class="img">
+                    <img src="./Logo.png" alt="BuxDU" class="img-fluid">
+                </div>
+                <div class="link-table">
+                    <a href="./table.html">Jadvalni ko'rish</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-4">
+            <div class="finger-parent">
+                <div class="finger-img">
+                    <div class="img-parent">
+                        <img src="./finger-print.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="img-svg">
+                        
+                        <img src="./svg/1.svg" data-speed="5" class="layer" alt="svg">
+                        <img src="./svg/2.svg" data-speed="2" class="layer" alt="svg">
+                        <img src="./svg/3.svg" data-speed="6" class="layer" alt="svg">
+                        <img src="./svg/4.svg" data-speed="8" class="layer" alt="svg">
+                        <img src="./svg/5.svg" data-speed="10" class="layer" alt="svg">
+                    </div>
+                </div>
+    
+                <div class="finger-text">
+                    <h2>Monitoring rasmiy veb saytiga xush kelibsiz!</h2>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        document.addEventListener('mousemove', parallax);
+            function parallax(e) {
+                this.querySelectorAll('.layer').forEach(layer =>{
+                    const speed = layer.getAttribute('data-speed')
+
+                    const x = (window.innerWidth - e.pageX*speed)/100;
+                    const y = (window.innerHeight - e.pageY*speed)/100;
+
+                    layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+
+                })
+            }
+    
+    </script>
+</body>
+</html>
